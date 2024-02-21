@@ -1,0 +1,11 @@
+union ResetPasswordResult = Success | Error
+
+input ResetPasswordInput {
+  token: String!
+  password: String!
+  confirmPassword: String!
+}
+
+type Mutation {
+  resetPassword(resetPasswordInput: ResetPasswordInput!): ResetPasswordResult!
+}

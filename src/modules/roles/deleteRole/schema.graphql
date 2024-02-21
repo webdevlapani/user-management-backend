@@ -1,0 +1,5 @@
+union DeleteRoleResult = Success | Error
+
+type Mutation {
+  deleteRole(roleId: ID!): DeleteRoleResult
+}

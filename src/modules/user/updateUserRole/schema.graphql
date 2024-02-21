@@ -1,0 +1,5 @@
+union UpdateUserRoleResult = Success | Error
+
+type Mutation {
+  updateUserRole(userId: ID!, roleId: ID!): UpdateUserRoleResult!
+}

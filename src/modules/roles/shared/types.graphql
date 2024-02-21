@@ -1,0 +1,13 @@
+type Permissions {
+  moduleType: ModuleType!
+  permissionType: [PermissionType]!
+}
+
+type Role {
+  _id: ID
+  name: String
+  permissions: [Permissions!]!
+  createdBy: User
+  createdAt: Date
+  updatedAt: Date
+}

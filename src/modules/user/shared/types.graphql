@@ -1,0 +1,29 @@
+scalar Date
+
+type User {
+  _id: ID!
+  email: String
+  firstName: String
+  lastName: String
+  isVerified: Boolean
+  profilePic: String
+  isActive: Boolean
+  createdAt: Date
+  updatedAt: Date
+  roles: [UserRole]
+}
+
+type UserRole {
+  _id: ID
+  name: String
+  permissions: [Permissions!]!
+}
+
+type Success {
+  success: Boolean
+}
+
+type Tokens {
+  accessToken: String!
+  refreshToken: String
+}

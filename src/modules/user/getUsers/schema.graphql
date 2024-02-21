@@ -1,0 +1,24 @@
+type UsersResult {
+  totalUsers: Int
+  users: [User]
+}
+
+union GetUsersResult = UsersResult | Error
+
+input UsersFilterInput {
+  email: String
+  firstName: String
+  lastName: String
+  isActive: Boolean
+  isVerified: Boolean
+}
+
+input GetUsersInput {
+  skip: Int = 0
+  limit: Int = 10
+  filters: UsersFilterInput
+}
+
+type Query {
+  getUsers(getUsersInput: GetUsersInput!): GetUsersResult!
+}

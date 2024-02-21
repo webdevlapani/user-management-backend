@@ -1,0 +1,5 @@
+union ForgotPasswordResult = Success | Error
+
+type Mutation {
+  forgotPassword(email: String!): ForgotPasswordResult!
+}

@@ -1,0 +1,27 @@
+enum ModuleType {
+  USERS
+  ROLES
+}
+
+enum PermissionType {
+  READ
+  CREATE
+  DELETE
+  UPDATE
+}
+
+input PermissionsInput {
+  moduleType: ModuleType!
+  permissionType: [PermissionType!]!
+}
+
+input CreateRoleInput {
+  name: String! @constraint(pattern: "^[0-9a-zA-Z]*$", maxLength: 255)
+  permissions: [PermissionsInput!]!
+}
+
+union CreateRoleResult = Success | Error
+
+type Mutation {
+  createRole(createRoleInput: CreateRoleInput!): CreateRoleResult!
+}

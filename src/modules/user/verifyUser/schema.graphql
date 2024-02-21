@@ -1,0 +1,5 @@
+union VerifyUserResult = Success | Error
+
+type Mutation {
+  verifyUser(token: String!): VerifyUserResult!
+}

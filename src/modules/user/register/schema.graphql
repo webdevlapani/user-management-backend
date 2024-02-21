@@ -1,0 +1,12 @@
+input RegisterUserInput {
+  email: String! @constraint(format: "email", maxLength: 255)
+  password: String! @constraint(minLength: 6, maxLength: 255)
+  firstName: String! @constraint(pattern: "^[0-9a-zA-Z]*$", maxLength: 255)
+  lastName: String! @constraint(pattern: "^[0-9a-zA-Z]*$", maxLength: 255)
+}
+
+union RegisterUserResult = Success | Error
+
+type Mutation {
+  registerUser(registerUserInput: RegisterUserInput!): RegisterUserResult!
+}

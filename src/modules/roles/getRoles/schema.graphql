@@ -1,0 +1,22 @@
+input RolesFilterInput {
+  name: String
+  moduleType: ModuleType
+  createdBy: ID
+}
+
+type RolesResult {
+  totalRoles: Int
+  roles: [Role]
+}
+
+input GetRolesInput {
+  skip: Int = 0
+  limit: Int = 10
+  filters: RolesFilterInput
+}
+
+union GetRolesResult = RolesResult | Error
+
+type Query {
+  getRoles(getRolesInput: GetRolesInput!): GetRolesResult!
+}

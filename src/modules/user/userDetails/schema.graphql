@@ -1,0 +1,5 @@
+union UserDetailsResult = User | Error
+
+type Query {
+  userDetails(userId: ID): UserDetailsResult!
+}

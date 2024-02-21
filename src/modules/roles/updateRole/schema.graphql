@@ -1,0 +1,11 @@
+union UpdateRoleResult = Success | Error
+
+input UpdateRoleInput {
+  roleId: ID!
+  name: String
+  permissions: [PermissionsInput!]
+}
+
+type Mutation {
+  updateRole(updateRoleInput: UpdateRoleInput!): UpdateRoleResult!
+}

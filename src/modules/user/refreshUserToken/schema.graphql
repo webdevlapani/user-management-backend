@@ -1,0 +1,7 @@
+type AccessToken {
+  accessToken: String!
+}
+
+type Query {
+  refreshUserToken(userId: ID!, refreshToken: String!): AccessToken!
+}

@@ -1,0 +1,5 @@
+union GetRoleResult = Role | Error
+
+type Query {
+  getRole(roleId: ID!): GetRoleResult
+}

@@ -1,0 +1,5 @@
+union ToggleUserStatusResult = Success | Error
+
+type Mutation {
+  toggleUserStatus(userId: ID!): ToggleUserStatusResult!
+}

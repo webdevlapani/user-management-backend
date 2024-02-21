@@ -1,0 +1,7 @@
+scalar Upload
+
+union UploadUserProfileResult = Success | Error
+
+type Mutation {
+  uploadUserProfile(file: Upload!): UploadUserProfileResult!
+}

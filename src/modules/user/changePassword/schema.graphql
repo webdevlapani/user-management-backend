@@ -1,0 +1,11 @@
+input ChangePasswordInput {
+  currentPassword: String! @constraint(minLength: 6, maxLength: 255)
+  password: String! @constraint(minLength: 6, maxLength: 255)
+  confirmPassword: String! @constraint(minLength: 6, maxLength: 255)
+}
+
+union ChangePasswordResult = Success | Error
+
+type Mutation {
+  changePassword(changePasswordInput: ChangePasswordInput!): ChangePasswordResult!
+}

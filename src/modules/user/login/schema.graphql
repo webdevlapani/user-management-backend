@@ -1,0 +1,10 @@
+input LoginUserInput {
+  email: String! @constraint(format: "email", maxLength: 255)
+  password: String! @constraint(minLength: 6, maxLength: 255)
+}
+
+union LoginUserResult = Tokens | Error
+
+type Query {
+  loginUser(loginUserInput: LoginUserInput!): LoginUserResult!
+}
